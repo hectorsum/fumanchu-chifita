@@ -22,7 +22,7 @@ function TikTokIcon() {
   );
 }
 
-const eyebrow = "font-display text-[11px] sm:text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.28em] text-[#FCF52B]/80";
+const eyebrow = "font-display text-[11px] sm:text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.28em] text-gray/80";
 const sectionLabel = "font-mono text-[11px] tracking-[0.14em] uppercase text-[#FCF52B]";
 
 const CARTA_CARDS = [
@@ -72,32 +72,30 @@ const DRINKS = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-ink">
-      <div className="flex h-dvh flex-col">
-        <Header />
-        <HeroCarousel />
-      </div>
+      <Header />
+      <HeroCarousel />
 
       <section id="nosotros" className="relative diagonal-pattern overflow-hidden bg-nosotros">
         <div className="relative mx-auto grid max-w-[1360px] grid-cols-1 items-center gap-10 px-10 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.02fr] lg:gap-24 lg:px-12 lg:py-24">
           <div className="max-w-[620px]">
             <p className={`${eyebrow} mb-5 lg:mb-6`}>La casa</p>
-            <h2 className="font-display text-[32px] font-bold uppercase leading-[1.08] tracking-[0.005em] text-cream sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
+            <h2 className="font-display text-[32px] font-bold uppercase leading-[1.08] tracking-[0.005em] text-[#ECC711] sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
               Sabor de chifa, alma de barrio
             </h2>
-            <div className="my-8 h-px w-24 bg-[#FCF52B]/80 lg:my-10"></div>
+            <div className="my-8 h-px w-24 bg-[#ECC711] lg:my-10"></div>
             <div className="flex flex-col gap-6 lg:gap-7">
-              <p className="font-serif text-[17px] leading-[1.65] text-cream/70 sm:text-[19px] lg:text-[22px]">
+              <p className="font-serif text-[17px] leading-[1.65] text-cream/80 sm:text-[19px] lg:text-[22px]">
                 Nacimos de la costumbre peruana más querida: pedir chifa. Cocinamos con wok de
                 acero, sillao fermentado y kion fresco, pero servimos en mesa larga, con luz de
                 farol y música alta.
               </p>
-              <p className="font-serif text-[17px] leading-[1.65] text-cream/70 sm:text-[19px] lg:text-[22px]">
-                Cada plato lleva el humo del wok —ese <em className="italic">wok hei</em> que no
-                se improvisa— y cada trago del Yan Ken Po Bar lleva un poco de juego.
+              <p className="font-serif text-[17px] leading-[1.65] text-cream/80 sm:text-[19px] lg:text-[22px]">
+                Cada plato lleva el humo del wok, ese <em className="italic">wok hei</em> que no
+                se improvisa, y cada trago del Yan Ken Po Bar lleva un poco de juego.
               </p>
             </div>
           </div>
-          <div className="border-[1.5px] border-[#FCF52B]">
+          <div className="border-[1.5px] border-[#ECC711]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/foto-local.jpg"
@@ -111,10 +109,10 @@ export default function Home() {
       <section id="carta" className="bg-carta py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-[1360px] px-10 sm:px-8 lg:px-12">
           <p className={`${eyebrow} mb-5 lg:mb-6`}>Carta</p>
-          <h2 className="font-display text-[32px] font-bold uppercase leading-[1.05] text-cream sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
+          <h2 className="font-display text-[32px] font-bold uppercase leading-[1.05] text-[#ECC711] sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
             Para compartir al centro
           </h2>
-          <div className="my-8 h-px w-24 bg-[#FCF52B]/80 lg:mb-16 lg:mt-10"></div>
+          <div className="my-8 h-px w-24 bg-[#ECC711] lg:mb-16 lg:mt-10"></div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
             {CARTA_CARDS.map((card) => (
               <a
@@ -122,22 +120,26 @@ export default function Home() {
                 href={card.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block aspect-[1090/830] overflow-hidden border-[1.5px] border-[#FCF52B] text-cream transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
+                className="group relative block aspect-[1090/830] overflow-hidden border-[1.5px] border-[#ECC711] text-cream transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={card.img}
                   alt={card.alt}
-                  className="absolute inset-0 block h-full w-full object-cover"
+                  className="absolute inset-0 block h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(13,9,7,0.92)_0%,rgba(13,9,7,0.6)_38%,rgba(13,9,7,0.25)_70%,rgba(13,9,7,0.35)_100%)]"></div>
+                <div className="absolute inset-0 bg-black/40 transition-opacity duration-500 ease-out group-hover:opacity-0"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(13,9,7,0.92)_0%,rgba(13,9,7,0.6)_38%,rgba(13,9,7,0.25)_70%,rgba(13,9,7,0.35)_100%)] transition-opacity duration-500 ease-out group-hover:opacity-80"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-end gap-3 px-6 pb-8 text-center sm:gap-5 sm:pb-12">
                   <p className={eyebrow}>{card.eyebrow}</p>
                   <h3 className="font-display text-[28px] font-bold uppercase leading-none sm:text-[36px] lg:text-[44px]">
                     {card.title}
                   </h3>
-                  <span className="mt-2 inline-flex items-center gap-3 border-[1.5px] border-[#FCF52B]/80 px-6 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.24em] text-cream sm:px-10 sm:py-4.5 lg:text-[13px]">
-                    Ver carta <span className="text-[15px]">↗</span>
+                  <span className="mt-2 inline-flex items-center gap-3 border-[1.5px] border-[#ECC711] px-6 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.24em] text-cream transition-colors duration-300 ease-out sm:px-10 sm:py-4.5 lg:text-[13px] group-hover:border-[#FCF52B] group-hover:bg-[#FCF52B]/10">
+                    Ver carta{" "}
+                    <span className="inline-block text-[15px] transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
                   </span>
                 </div>
               </a>
@@ -148,20 +150,20 @@ export default function Home() {
 
       <section
         id="bar"
-        className="relative border-y border-[#FCF52B]/20 bg-bar py-16 sm:py-20 lg:py-[120px]"
+        className="relative border-y border-[#ECC711]/25 bg-bar py-16 sm:py-20 lg:py-[120px]"
       >
         <div className="relative mx-auto max-w-[1560px] px-10 sm:px-8 lg:px-12">
           <div className="mb-10 flex flex-col gap-8 lg:mb-14 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-12">
             <div>
-              <p className="mb-3 font-display text-[11px] font-semibold uppercase tracking-[0.32em] text-[#FCF52B]/80 lg:mb-4.5 lg:text-[12px]">
+              <p className="mb-3 font-display text-[11px] font-semibold uppercase tracking-[0.32em] text-gray/80 lg:mb-4.5 lg:text-[12px]">
                 Yan Ken Po Bar
               </p>
-              <h2 className="max-w-[18ch] font-display text-[38px] font-bold uppercase leading-[1] text-cream sm:text-[52px] lg:text-[68px] lg:leading-[0.98]">
+              <h2 className="max-w-[18ch] font-display text-[38px] font-bold uppercase leading-[1] text-[#ECC711] sm:text-[52px] lg:text-[68px] lg:leading-[0.98]">
                 Piedra, papel
                 <br />o tijera
               </h2>
             </div>
-            <p className="max-w-[44ch] font-serif text-[17px] leading-[1.6] text-cream/68 sm:text-[19px] lg:text-[21px]">
+            <p className="max-w-[44ch] font-serif text-[17px] leading-[1.6] text-cream/80 sm:text-[19px] lg:text-[21px]">
               Destilados peruanos, infusiones de té y fruta del mercado. Tres tragos insignia y
               una sola regla: quien pierde, invita la siguiente ronda.
             </p>
@@ -170,7 +172,7 @@ export default function Home() {
             {DRINKS.map((drink) => (
               <article
                 key={drink.title}
-                className="group relative overflow-hidden border-[1.5px] border-[#FCF52B]/80 bg-ink-card transition-colors duration-[400ms] ease-out hover:border-[#FCF52B]"
+                className="group relative overflow-hidden border-[1.5px] border-[#FCF52B]/70 bg-ink-card transition-[transform,border-color] duration-[400ms] ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -178,6 +180,7 @@ export default function Home() {
                   alt={drink.alt}
                   className="block aspect-[3/4] w-full object-cover [filter:saturate(0.95)_brightness(0.78)] transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.04] group-hover:[filter:saturate(1)_brightness(0.9)]"
                 />
+                <div className="absolute inset-0 bg-black/40 transition-opacity duration-500 ease-out group-hover:opacity-0"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(9,6,4,0.94)_0%,rgba(9,6,4,0.35)_42%,rgba(9,6,4,0.05)_100%)]"></div>
                 {/* <span className="absolute left-5 top-5 font-display text-[12px] font-semibold tracking-[0.28em] text-[#FCF52B]/85">
                   {drink.tag}
@@ -204,7 +207,7 @@ export default function Home() {
             </p>
             <a
               href="#carta"
-              className="whitespace-nowrap border-[1.5px] border-[#FCF52B]/55 px-7 py-4 font-display text-[12px] font-semibold uppercase tracking-[0.24em] text-[#FCF52B] transition-colors duration-150 ease-out hover:bg-[#FCF52B]/12 hover:text-[#FCF52B]-light"
+              className="whitespace-nowrap border-[1.5px] border-[#ECC711]/55 px-7 py-4 font-display text-[12px] font-semibold uppercase tracking-[0.24em] text-[#ECC711] transition-colors duration-150 ease-out hover:bg-[#FCF52B]/12 hover:text-[#FCF52B]-light"
             >
               Carta del bar
             </a>
@@ -218,13 +221,13 @@ export default function Home() {
           <img
             src="/assets/mesa.jpg"
             alt="Dim sum y wantanes servidos en platos oscuros con ají"
-            className="block aspect-square w-full border-[1.5px] border-[#FCF52B] object-cover"
+            className="block aspect-square w-full border-[1.5px] border-[#ECC711] object-cover"
           />
           <div>
-            <h2 className="mb-5 max-w-[20ch] font-display text-[30px] font-bold uppercase leading-[1.1] text-cream sm:text-[40px] lg:mb-6 lg:text-[52px] lg:leading-[1.05]">
+            <h2 className="mb-5 max-w-[20ch] font-display text-[30px] font-bold uppercase leading-[1.1] text-[#ECC711] sm:text-[40px] lg:mb-6 lg:text-[52px] lg:leading-[1.05]">
               Mesa larga, sobremesa larga
             </h2>
-            <p className="mb-8 max-w-[52ch] text-[16px] leading-[1.7] text-cream/68 sm:text-[17px] lg:mb-10">
+            <p className="mb-8 max-w-[52ch] text-[16px] leading-[1.7] text-cream/80 sm:text-[17px] lg:mb-10">
               Venimos preparados para grupos, cumpleaños y esas cenas que empiezan con té y
               terminan con la última ronda del bar. Reserva y te guardamos el sitio.
             </p>

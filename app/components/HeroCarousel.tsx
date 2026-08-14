@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const SLIDES = [
   {
     mobileSrc: "/assets/banner-1-mobile.jpg",
-    desktopSrc: "/assets/banner-dimsum-nights.png",
+    desktopSrc: "/assets/banner-1.png",
     alt: "Dim Sum Nights en Fu Man Chu: viernes de 7pm a 11pm, música de DJ Good Boy",
     desktopObjectClass: "sm:object-[center_42%]",
   },
@@ -41,7 +41,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section id="top" className="min-h-0 flex-1 bg-[#0D0906]">
+    <section id="top" className="h-dvh bg-[#0D0906]">
       <div className="relative h-full w-full overflow-hidden bg-ink-card">
         {SLIDES.map((slide, i) => (
           <a
@@ -68,10 +68,10 @@ export default function HeroCarousel() {
           type="button"
           onClick={() => jump(index - 1)}
           aria-label="Promoción anterior"
-          className="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream/20 bg-black/35 text-cream backdrop-blur-sm transition-[transform,color,background-color] duration-150 ease-out [filter:drop-shadow(0_2px_8px_rgba(0,0,0,0.5))] hover:-translate-x-1 hover:-translate-y-1/2 hover:text-gold active:scale-95 sm:left-3 sm:h-20 sm:w-20 sm:rounded-none sm:border-0 sm:bg-transparent sm:backdrop-blur-none lg:left-6 lg:h-24 lg:w-24"
+          className="absolute cursor left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-ink-header/80 text-cream shadow-[0_2px_10px_rgba(0,0,0,0.5)] transition-colors duration-150 ease-out hover:bg-ink-header hover:text-gold active:scale-95 sm:left-5 sm:h-12 sm:w-12 lg:left-6 lg:h-14 lg:w-14"
         >
           <svg
-            className="h-5 w-5 sm:h-9 sm:w-9 lg:h-11 lg:w-11"
+            className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -87,10 +87,10 @@ export default function HeroCarousel() {
           type="button"
           onClick={() => jump(index + 1)}
           aria-label="Promoción siguiente"
-          className="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream/20 bg-black/35 text-cream backdrop-blur-sm transition-[transform,color,background-color] duration-150 ease-out [filter:drop-shadow(0_2px_8px_rgba(0,0,0,0.5))] hover:-translate-y-1/2 hover:translate-x-1 hover:text-gold active:scale-95 sm:right-3 sm:h-20 sm:w-20 sm:rounded-none sm:border-0 sm:bg-transparent sm:backdrop-blur-none lg:right-6 lg:h-24 lg:w-24"
+          className="absolute cursor right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-ink-header/80 text-cream shadow-[0_2px_10px_rgba(0,0,0,0.5)] transition-colors duration-150 ease-out hover:bg-ink-header hover:text-gold active:scale-95 sm:right-5 sm:h-12 sm:w-12 lg:right-6 lg:h-14 lg:w-14"
         >
           <svg
-            className="h-5 w-5 sm:h-9 sm:w-9 lg:h-11 lg:w-11"
+            className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
