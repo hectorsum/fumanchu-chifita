@@ -1,5 +1,7 @@
 import Header from "./components/Header";
 import HeroCarousel from "./components/HeroCarousel";
+import Reveal from "./components/Reveal";
+import NewsletterForm from "./components/NewsletterForm";
 
 const WHATSAPP_RESERVE_URL =
   "https://wa.me/51999999999?text=Hola%20Fu%20Man%20Chu%2C%20quiero%20reservar%20una%20mesa";
@@ -22,7 +24,7 @@ function TikTokIcon() {
   );
 }
 
-const eyebrow = "font-display text-[11px] sm:text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.28em] text-gray/80";
+const eyebrow = "font-display text-[11px] sm:text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.28em] text-[#DD0522]/90";
 const sectionLabel = "font-mono text-[11px] tracking-[0.14em] uppercase text-[#FCF52B]";
 
 const CARTA_CARDS = [
@@ -77,9 +79,9 @@ export default function Home() {
 
       <section id="nosotros" className="relative diagonal-pattern overflow-hidden bg-nosotros">
         <div className="relative mx-auto grid max-w-[1360px] grid-cols-1 items-center gap-10 px-10 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.02fr] lg:gap-24 lg:px-12 lg:py-24">
-          <div className="max-w-[620px]">
+          <Reveal className="max-w-[620px]">
             <p className={`${eyebrow} mb-5 lg:mb-6`}>La casa</p>
-            <h2 className="font-display text-[32px] font-bold uppercase leading-[1.08] tracking-[0.005em] text-[#ECC711] sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
+            <h2 className="text-stroke-ink font-display text-[32px] font-bold uppercase leading-[1.08] tracking-[0.005em] text-[#ECC711] sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
               Sabor de chifa, alma de barrio
             </h2>
             <div className="my-8 h-px w-24 bg-[#ECC711] lg:my-10"></div>
@@ -94,33 +96,35 @@ export default function Home() {
                 se improvisa, y cada trago del Yan Ken Po Bar lleva un poco de juego.
               </p>
             </div>
-          </div>
-          <div className="border-[1.5px] border-[#ECC711]">
+          </Reveal>
+          <Reveal delay={150} className="frame-stroke-ink border-[1.5px] border-[#ECC711]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/foto-local.jpg"
               alt="Interior del chifa con faroles rojos y celosías de madera"
               className="block aspect-[650/808] w-fit object-contain"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section id="carta" className="bg-carta py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-[1360px] px-10 sm:px-8 lg:px-12">
-          <p className={`${eyebrow} mb-5 lg:mb-6`}>Carta</p>
-          <h2 className="font-display text-[32px] font-bold uppercase leading-[1.05] text-[#ECC711] sm:text-[42px] lg:text-[58px] lg:leading-[1.02]">
+          <Reveal as="p" className={`${eyebrow} mb-5 lg:mb-6`}>Carta</Reveal>
+          <Reveal
+            as="h2"
+            className="text-stroke-ink font-display text-[32px] font-bold uppercase leading-[1.05] text-[#ECC711] sm:text-[42px] lg:text-[58px] lg:leading-[1.02]"
+          >
             Para compartir al centro
-          </h2>
+          </Reveal>
           <div className="my-8 h-px w-24 bg-[#ECC711] lg:mb-16 lg:mt-10"></div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
-            {CARTA_CARDS.map((card) => (
-              <a
-                key={card.title}
+            {CARTA_CARDS.map((card, i) => (
+              <Reveal key={card.title} delay={i * 150} as="a"
                 href={card.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block aspect-[1090/830] overflow-hidden border-[1.5px] border-[#ECC711] text-cream transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
+                className="group relative block aspect-[1090/830] frame-stroke-ink overflow-hidden border-[1.5px] border-[#ECC711] text-cream transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -132,7 +136,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(13,9,7,0.92)_0%,rgba(13,9,7,0.6)_38%,rgba(13,9,7,0.25)_70%,rgba(13,9,7,0.35)_100%)] transition-opacity duration-500 ease-out group-hover:opacity-80"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-end gap-3 px-6 pb-8 text-center sm:gap-5 sm:pb-12">
                   <p className={eyebrow}>{card.eyebrow}</p>
-                  <h3 className="font-display text-[28px] font-bold uppercase leading-none sm:text-[36px] lg:text-[44px]">
+                  <h3 className="text-stroke-ink font-display text-[28px] font-bold uppercase leading-none sm:text-[36px] lg:text-[44px]">
                     {card.title}
                   </h3>
                   <span className="mt-2 inline-flex items-center gap-3 border-[1.5px] border-[#ECC711] px-6 py-3.5 font-display text-[11px] font-semibold uppercase tracking-[0.24em] text-cream transition-colors duration-300 ease-out sm:px-10 sm:py-4.5 lg:text-[13px] group-hover:border-[#FCF52B] group-hover:bg-[#FCF52B]/10">
@@ -142,7 +146,7 @@ export default function Home() {
                     </span>
                   </span>
                 </div>
-              </a>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -154,25 +158,31 @@ export default function Home() {
       >
         <div className="relative mx-auto max-w-[1560px] px-10 sm:px-8 lg:px-12">
           <div className="mb-10 flex flex-col gap-8 lg:mb-14 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-12">
-            <div>
-              <p className="mb-3 font-display text-[11px] font-semibold uppercase tracking-[0.32em] text-gray/80 lg:mb-4.5 lg:text-[12px]">
+            <Reveal>
+              <p className="mb-3 font-display text-[11px] font-semibold uppercase tracking-[0.32em] text-[#DD0522]/90 lg:mb-4.5 lg:text-[12px]">
                 Yan Ken Po Bar
               </p>
-              <h2 className="max-w-[18ch] font-display text-[38px] font-bold uppercase leading-[1] text-[#ECC711] sm:text-[52px] lg:text-[68px] lg:leading-[0.98]">
+              <h2 className="text-stroke-ink max-w-[18ch] font-display text-[38px] font-bold uppercase leading-[1] text-[#ECC711] sm:text-[52px] lg:text-[68px] lg:leading-[0.98]">
                 Piedra, papel
                 <br />o tijera
               </h2>
-            </div>
-            <p className="max-w-[44ch] font-serif text-[17px] leading-[1.6] text-cream/80 sm:text-[19px] lg:text-[21px]">
+            </Reveal>
+            <Reveal
+              as="p"
+              delay={150}
+              className="max-w-[44ch] font-serif text-[17px] leading-[1.6] text-cream/80 sm:text-[19px] lg:text-[21px]"
+            >
               Destilados peruanos, infusiones de té y fruta del mercado. Tres tragos insignia y
               una sola regla: quien pierde, invita la siguiente ronda.
-            </p>
+            </Reveal>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-            {DRINKS.map((drink) => (
-              <article
+            {DRINKS.map((drink, i) => (
+              <Reveal
                 key={drink.title}
-                className="group relative overflow-hidden border-[1.5px] border-[#FCF52B]/70 bg-ink-card transition-[transform,border-color] duration-[400ms] ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
+                as="article"
+                delay={i * 150}
+                className="group relative overflow-hidden border-[1.5px] frame-stroke-ink border-[#FCF52B]/70 bg-ink-card transition-[transform,border-color] duration-[400ms] ease-out hover:-translate-y-1 hover:border-[#FCF52B]"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -186,7 +196,7 @@ export default function Home() {
                   {drink.tag}
                 </span> */}
                 <div className="absolute inset-x-0 bottom-0 px-6 pb-7">
-                  <h3 className="mb-3 font-display text-[32px] font-bold uppercase leading-none text-cream sm:text-[40px]">
+                  <h3 className="text-stroke-ink mb-3 font-display text-[32px] font-bold uppercase leading-none text-cream sm:text-[40px]">
                     {drink.title}
                   </h3>
                   <div className="mb-3.5 h-px w-11 bg-[#FCF52B]/80"></div>
@@ -197,10 +207,10 @@ export default function Home() {
                     {drink.desc}
                   </p>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
-          <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row lg:mt-11 lg:gap-6">
+          <Reveal className="mt-10 flex flex-col items-center gap-5 sm:flex-row lg:mt-11 lg:gap-6">
             <div className="hidden h-px flex-1 bg-[#FCF52B]/50 sm:block"></div>
             <p className="text-center font-display text-[12px] font-medium uppercase tracking-[0.28em] text-cream/50">
               Quien pierde, invita la ronda
@@ -211,20 +221,21 @@ export default function Home() {
             >
               Carta del bar
             </a>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section id="reservas" className="mx-auto max-w-[1200px] px-10 py-20 sm:px-8 lg:px-8 lg:py-32">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Reveal<"img">
+            as="img"
             src="/assets/mesa.jpg"
             alt="Dim sum y wantanes servidos en platos oscuros con ají"
-            className="block aspect-square w-full border-[1.5px] border-[#ECC711] object-cover"
+            className="frame-stroke-ink block aspect-square w-full border-[1.5px] border-[#ECC711] object-cover"
           />
-          <div>
-            <h2 className="mb-5 max-w-[20ch] font-display text-[30px] font-bold uppercase leading-[1.1] text-[#ECC711] sm:text-[40px] lg:mb-6 lg:text-[52px] lg:leading-[1.05]">
+          <Reveal delay={150}>
+            <h2 className="text-stroke-ink mb-5 max-w-[20ch] font-display text-[30px] font-bold uppercase leading-[1.1] text-[#ECC711] sm:text-[40px] lg:mb-6 lg:text-[52px] lg:leading-[1.05]">
               Mesa larga, sobremesa larga
             </h2>
             <p className="mb-8 max-w-[52ch] text-[16px] leading-[1.7] text-cream/80 sm:text-[17px] lg:mb-10">
@@ -235,16 +246,21 @@ export default function Home() {
               href={WHATSAPP_RESERVE_URL}
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-3.5 whitespace-nowrap bg-reserva px-9 py-5 font-display text-[13px] font-semibold uppercase tracking-[0.24em] text-cream transition-colors duration-150 ease-out hover:bg-reserva-hover active:scale-[0.98]"
+              className="stamp-btn group inline-block"
             >
-              Reserva tu mesa
+              <span className="relative z-10 flex items-center gap-3.5 whitespace-nowrap bg-reserva/80 px-9 py-5 font-display text-[13px] font-semibold uppercase tracking-[0.24em] text-cream transition-[background-color,transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:bg-reserva group-active:scale-[0.98]">
+                Reserva tu mesa
+              </span>
             </a>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <footer id="contacto" className="border-t border-cream/10 bg-footer">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-10 pb-10 pt-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1.2fr_1fr_1fr_1fr] lg:gap-12 lg:px-8 lg:pt-24">
+        <Reveal
+          as="div"
+          className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-10 pb-10 pt-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1fr_0.8fr_0.8fr_1.3fr] lg:gap-12 lg:px-8 lg:pt-24"
+        >
           <div className="col-span-full sm:col-span-2 lg:col-span-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -280,7 +296,7 @@ export default function Home() {
                   <InstagramIcon />
                 </a>
                 <a
-                  href="https://www.tiktok.com/@fumanchuchifita"
+                  href="https://www.tiktok.com/@fumanchu_chifita"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="TikTok"
@@ -299,16 +315,10 @@ export default function Home() {
               <span>Dom · 12:30 – 17:00</span>
             </div>
           </div>
-          <div>
-            <p className={`${sectionLabel} mb-5`}>Reservas</p>
-            <a
-              href="#reservas"
-              className="inline-block border-[1.5px] border-[#FCF52B]/80 px-7 py-4 font-display text-[12px] font-semibold uppercase tracking-[0.24em] text-[#FCF52B] transition-all duration-150 ease-out hover:border-[#FCF52B] hover:text-[#FCF52B]-light"
-            >
-              Reservar mesa
-            </a>
+          <div className="col-span-full sm:col-span-2 lg:col-span-1">
+            <NewsletterForm />
           </div>
-        </div>
+        </Reveal>
         <div className="mx-auto max-w-[1200px] px-5 pb-10 sm:px-8 lg:px-8">
           <div className="mb-6 h-px bg-cream/8"></div>
           <p className="font-mono text-xs text-[#6B6B6B]">

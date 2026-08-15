@@ -21,7 +21,7 @@
 
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1fbf59;
-  --color-reserva: #8e2b26;
+  --color-reserva: #DD0522;
   --color-reserva-hover: #a5382f;
 }
 
@@ -45,6 +45,90 @@
 
   img {
     max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-down {
+  animation: fade-down 0.8s ease-out both;
+}
+
+@utility animate-fade-up {
+  animation: fade-up 0.9s ease-out both;
+}
+
+@utility text-stroke-ink {
+  text-shadow:
+    1.5px 1.5px 0 #79311a,
+    3px 3px 0 #79311a,
+    4px 4px 6px rgba(121, 49, 26, 0.55);
+}
+
+@utility frame-stroke-ink {
+  box-shadow:
+    3px 3px 0 #79311a,
+    6px 6px 10px rgba(121, 49, 26, 0.5);
+}
+
+@utility frame-stroke-gold {
+  box-shadow: 3px 3px 0 rgba(236, 199, 17, 0.8);
+}
+
+@utility stamp-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    z-index: -1;
+    background: #ecc711;
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+    transition:
+      transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity 0.2s ease-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1) rotate(-3deg);
   }
 }
 
