@@ -321,9 +321,19 @@ export default function Home() {
         </Reveal>
         <div className="mx-auto max-w-[1200px] px-5 pb-10 sm:px-8 lg:px-8">
           <div className="mb-6 h-px bg-cream/8"></div>
-          <p className="font-mono text-xs text-[#6B6B6B]">
-            © 2026 Fu Man Chu Chifita · 秘鲁中国菜
-          </p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-mono text-xs text-[#6B6B6B]">
+              © 2026 Fu Man Chu Chifita · 秘鲁中国菜
+            </p>
+            <a
+              href="https://hectorsum.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-[#6B6B6B] transition-colors hover:text-[#ECC711]"
+            >
+              developed by Hector
+            </a>
+          </div>
         </div>
       </footer>
     </div>
