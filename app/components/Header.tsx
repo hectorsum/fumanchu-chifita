@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const WHATSAPP_ORDER_URL =
-  "https://wa.me/51924230225?text=Hola, quiero pedir delivery";
+  "https://wa.me/51991969776?text=Hola, quiero pedir delivery";
 
 const NAV_LINKS = [
   { href: "#top", label: "Inicio" },

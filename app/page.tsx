@@ -4,7 +4,7 @@ import Reveal from "./components/Reveal";
 import NewsletterForm from "./components/NewsletterForm";
 
 const WHATSAPP_RESERVE_URL =
-  "https://wa.me/51999999999?text=Hola%20Fu%20Man%20Chu%2C%20quiero%20reservar%20una%20mesa";
+  "https://wa.me/51991969776?text=Hola%20Fu%20Man%20Chu%2C%20quiero%20reservar%20una%20mesa";
 
 function InstagramIcon() {
   return (
@@ -310,9 +310,8 @@ export default function Home() {
           <div>
             <p className={`${sectionLabel} mb-5`}>Horario</p>
             <div className="flex flex-col gap-2.5 text-[15px] text-cream/68">
-              <span>Mar – Jue · 12:30 – 23:00</span>
-              <span>Vie – Sáb · 12:30 – 00:30</span>
-              <span>Dom · 12:30 – 17:00</span>
+              <span>Lun – Sáb: 12 pm a 10 pm</span>
+              <span>Dom: 12 pm a 8 pm</span>
             </div>
           </div>
           <div className="col-span-full sm:col-span-2 lg:col-span-1">
