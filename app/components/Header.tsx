@@ -38,79 +38,79 @@ export default function Header() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 shrink-0 border-b border-cream/8 bg-ink-header/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1560px] items-center justify-between gap-4 px-5 py-0 sm:px-8 lg:px-12 lg:py-[0px]">
-        <a href="#top" className="flex items-center text-cream">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/fumanchu-logo.png"
-            alt="Logo Fu Man Chu Chifita"
-            className="block h-14 w-auto sm:h-16 lg:h-[92px]"
-          />
-        </a>
-
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="font-display text-[13px] font-medium uppercase tracking-[0.18em] text-cream transition-colors hover:text-gold"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href={WHATSAPP_ORDER_URL}
-            target="_blank"
-            rel="noopener"
-            className="stamp-btn group inline-block"
-          >
-            <span className="relative z-10 flex items-center gap-2.5 whitespace-nowrap bg-reserva/80 px-7 py-3.5 font-display text-xs font-semibold uppercase tracking-[0.24em] text-cream transition-[background-color,transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:bg-reserva">
-              <WhatsAppIcon className="text-cream" />
-              Haz tu pedido
-            </span>
+      <header className="sticky top-0 z-50 shrink-0 border-b border-cream/8 bg-ink-header/95 backdrop-blur-md">
+        <div className="mx-auto flex max-w-[1560px] items-center justify-between gap-4 px-5 py-0 sm:px-8 lg:px-12 lg:py-[0px]">
+          <a href="#top" className="flex items-center text-cream">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/fumanchu-logo.png"
+              alt="Logo Fu Man Chu Chifita"
+              className="block h-14 w-auto sm:h-16 lg:h-[92px]"
+            />
           </a>
-        </nav>
 
-        <div className="flex items-center gap-3 lg:hidden">
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center text-cream transition-colors hover:text-gold"
-          >
-            <MenuIcon open={open} />
-          </button>
-        </div>
-      </div>
-
-      {open && (
-        <nav className="flex flex-col gap-1 border-t border-cream/8 bg-ink-header px-5 py-4 lg:hidden">
-          {NAV_LINKS.map((link) => (
+          <nav className="hidden items-center gap-8 lg:flex">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="font-display text-[13px] font-medium uppercase tracking-[0.18em] text-cream transition-colors hover:text-[#FCF52B]"
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="font-display text-sm font-medium uppercase tracking-[0.18em] text-cream py-3 transition-colors hover:text-gold"
+              href={WHATSAPP_ORDER_URL}
+              target="_blank"
+              rel="noopener"
+              className="stamp-btn group inline-block"
             >
-              {link.label}
+              <span className="relative z-10 flex items-center gap-2.5 whitespace-nowrap bg-reserva/80 px-7 py-3.5 font-display text-xs font-semibold uppercase tracking-[0.24em] text-cream transition-[background-color,transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:bg-reserva">
+                <WhatsAppIcon className="text-cream" />
+                Haz tu pedido
+              </span>
             </a>
-          ))}
-        </nav>
-      )}
-    </header>
+          </nav>
 
-    <a
-      href={WHATSAPP_ORDER_URL}
-      target="_blank"
-      rel="noopener"
-      aria-label="Haz tu pedido por WhatsApp"
-      className="animate-fade-up fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_4px_14px_rgba(0,0,0,0.45)] transition-colors duration-300 ease-in-out hover:bg-whatsapp-hover lg:hidden"
-      style={{ animationDelay: "600ms" }}
-    >
-      <WhatsAppIcon className="h-7 w-7 text-white" />
-    </a>
+          <div className="flex items-center gap-3 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={open}
+              className="flex h-10 w-10 items-center justify-center text-cream transition-colors hover:text-gold"
+            >
+              <MenuIcon open={open} />
+            </button>
+          </div>
+        </div>
+
+        {open && (
+          <nav className="flex flex-col gap-1 border-t border-cream/8 bg-ink-header px-5 py-4 lg:hidden">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="font-display text-sm font-medium uppercase tracking-[0.18em] text-cream py-3 transition-colors hover:text-gold"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        )}
+      </header>
+
+      <a
+        href={WHATSAPP_ORDER_URL}
+        target="_blank"
+        rel="noopener"
+        aria-label="Haz tu pedido por WhatsApp"
+        className="animate-fade-up fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_4px_14px_rgba(0,0,0,0.45)] transition-colors duration-300 ease-in-out hover:bg-whatsapp-hover lg:hidden"
+        style={{ animationDelay: "600ms" }}
+      >
+        <WhatsAppIcon className="h-7 w-7 text-white" />
+      </a>
     </>
   );
 }

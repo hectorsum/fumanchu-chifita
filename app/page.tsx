@@ -266,7 +266,7 @@ export default function Home() {
             <img
               src="/assets/fumanchu-logo.png"
               alt="Logo Fu Man Chu Chifita"
-              className="mb-5 block h-14 w-auto lg:h-[62px]"
+              className="mb-5 block h-14 w-auto lg:h-[82px]"
             />
             <p className="max-w-[34ch] text-[15px] leading-[1.7] text-cream/60">
               Chifita de barrio: wok, brasa y tragos. Cocina chino-peruana servida con cariño.
